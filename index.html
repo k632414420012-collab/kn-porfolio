@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vũ Kim Ngọc | Data Analyst Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0f172a',
+                            900: '#0b1120',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Montserrat', sans-serif; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0b1120; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
+        /* Timeline styling */
+        .timeline-dot {
+            position: absolute;
+            left: -33px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #06b6d4;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 4px #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Sticky Header -->
+    <header class="fixed w-full top-0 z-50 bg-navy-900/95 backdrop-blur-md text-white shadow-lg transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-heading font-bold text-2xl tracking-wider text-white">
+                VKN<span class="text-cyan-400">.</span>
+            </a>
+            <nav class="hidden md:flex gap-8 font-medium text-sm tracking-wide">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">Giới thiệu</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors">Học vấn</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Kỹ năng</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Dự án</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Kinh nghiệm</a>
+            </nav>
+            <a href="#contact" class="hidden md:inline-block bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-semibold px-5 py-2.5 rounded-full transition-colors text-sm">
+                Liên hệ ngay
+            </a>
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-navy-900 text-white min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#22d3ee 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full py-12">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase mb-4 text-sm">Portfolio Cá Nhân</p>
+                <h1 class="font-heading text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Vũ Kim <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Ngọc</span>
+                </h1>
+                <p class="text-xl text-gray-300 font-light mb-8 border-l-4 border-cyan-400 pl-4">
+                    Data Analyst / Economic & Market Research Analyst
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-semibold px-8 py-3.5 rounded-full transition-all transform hover:-translate-y-1 shadow-lg shadow-cyan-500/30">
+                        Xem Dự Án
+                    </a>
+                    <a href="#about" class="border border-gray-500 hover:border-cyan-400 hover:text-cyan-400 text-white font-semibold px-8 py-3.5 rounded-full transition-all">
+                        Khám Phá
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="absolute inset-0 bg-cyan-500 rounded-full blur-[100px] opacity-20"></div>
+                <!-- Profile Image -->
+                <img src="ảnh cá nhân.jpg" alt="Vũ Kim Ngọc" class="relative z-10 w-72 md:w-96 h-auto object-cover rounded-2xl shadow-2xl border-4 border-navy-800 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="w-full md:w-1/3" data-aos="fade-up">
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="font-heading text-xl font-bold text-navy-900 mb-6 border-b pb-4">Thông Tin Liên Hệ</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-cyan-500 w-5 text-center"></i> Phường Láng, Hà Nội</li>
+                            <li class="flex items-center gap-4"><i class="fas fa-phone text-cyan-500 w-5 text-center"></i> 0325 756 458</li>
+                            <li class="flex items-center gap-4"><i class="fas fa-envelope text-cyan-500 w-5 text-center"></i> ngocvuthp2006@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="font-heading text-4xl font-bold text-navy-900 mb-6">Về Bản Thân</h2>
+                    <div class="w-20 h-1 bg-cyan-500 mb-8"></div>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Là Cử nhân Kinh tế và Phát triển Quốc tế tương lai tại Đại học Ngoại thương (GPA 3.6/4.0). Tôi nắm vững nền tảng kinh tế định lượng, phân tích tài chính và xử lý dữ liệu chuỗi thời gian/dữ liệu bảng (Panel Data).
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Có kinh nghiệm thực chiến dẫn dắt các dự án nghiên cứu kinh tế lượng bằng Stata, Python và Excel, khai thác nguồn dữ liệu lớn từ các tổ chức quốc tế (World Bank, UN Comtrade). Luôn nỗ lực kết hợp tư duy phân tích sắc bén với kỹ năng thương mại thực tế qua các vị trí tư vấn & quản lý dữ liệu khách hàng.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-4xl font-bold text-navy-900 mb-4">Học Vấn & Chứng Chỉ</h2>
+                <div class="w-20 h-1 bg-cyan-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education Block -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-heading text-2xl font-bold text-navy-900">Đại học Ngoại Thương (FTU)</h3>
+                        <span class="text-sm font-semibold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">2024 - 2028</span>
+                    </div>
+                    <p class="text-gray-800 font-medium mb-2">Khoa: Kinh tế quốc tế | Chuyên ngành: Kinh tế và Phát triển quốc tế</p>
+                    <p class="text-gray-600 mb-4 font-bold">GPA tích lũy: <span class="text-cyan-600">3.6 / 4.0</span></p>
+                    <div class="mb-6">
+                        <img src="gpa.png" alt="GPA FTU" class="w-full max-w-xs rounded border border-gray-200">
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-2">Môn học tiêu biểu</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Kinh tế lượng 1 & 2</li>
+                            <li>Kinh tế học quốc tế 1 & 2</li>
+                            <li>Kinh tế vi mô/vĩ mô 1 & 2</li>
+                            <li>Tăng trưởng phát triển, Thương mại phát triển</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Certifications Block -->
+                <div class="bg-navy-900 p-8 rounded-2xl shadow-sm text-white" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-heading text-2xl font-bold mb-8 flex items-center gap-3">
+                        <i class="fas fa-award text-cyan-400"></i> Chứng Chỉ & Ngoại Ngữ
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-cyan-400">
+                                <i class="fab fa-google text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Google AI Essentials</h4>
+                                <p class="text-gray-400 text-sm">Cấp bởi Google</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-cyan-400">
+                                <i class="fas fa-language text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">IELTS 6.5</h4>
+                                <p class="text-gray-400 text-sm">Tiếng Anh</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 text-cyan-400">
+                                <i class="fas fa-yin-yang text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">HSKK Trung cấp</h4>
+                                <p class="text-gray-400 text-sm">Tiếng Trung (Đang theo học)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-4xl font-bold text-navy-900 mb-4">Năng Lực & Bộ Công Cụ</h2>
+                <div class="w-20 h-1 bg-cyan-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Group 1 -->
+                <div class="border border-gray-100 p-6 rounded-xl hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-chart-pie text-3xl text-cyan-500 mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 mb-4">Phân tích & Định lượng</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Data Analysis</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Business Analysis</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Quantitative Analysis</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Data Visualization</span>
+                    </div>
+                </div>
+                <!-- Group 2 -->
+                <div class="border border-gray-100 p-6 rounded-xl hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-laptop-code text-3xl text-cyan-500 mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 mb-4">Công cụ kỹ thuật</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-cyan-50 text-cyan-700 border border-cyan-100 text-xs px-3 py-1.5 rounded-full">Stata</span>
+                        <span class="bg-cyan-50 text-cyan-700 border border-cyan-100 text-xs px-3 py-1.5 rounded-full">Python</span>
+                        <span class="bg-cyan-50 text-cyan-700 border border-cyan-100 text-xs px-3 py-1.5 rounded-full">Excel (Advanced)</span>
+                        <span class="bg-cyan-50 text-cyan-700 border border-cyan-100 text-xs px-3 py-1.5 rounded-full">CRM</span>
+                    </div>
+                </div>
+                <!-- Group 3 -->
+                <div class="border border-gray-100 p-6 rounded-xl hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-database text-3xl text-cyan-500 mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 mb-4">Khai thác dữ liệu</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">World Bank Data</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">UN Comtrade</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Trade Map</span>
+                    </div>
+                </div>
+                <!-- Group 4 -->
+                <div class="border border-gray-100 p-6 rounded-xl hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-users-cog text-3xl text-cyan-500 mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-navy-900 mb-4">Kỹ năng mềm</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Leadership</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Project Management</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Presentation</span>
+                        <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1.5 rounded-full">Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-navy-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-4xl font-bold mb-4">Dự Án Nghiên Cứu Tiêu Biểu</h2>
+                <div class="w-20 h-1 bg-cyan-500 mx-auto mb-6"></div>
+                <p class="text-gray-400">Các nghiên cứu được triển khai theo mô hình STAR (Situation - Task - Action - Result)</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Project 1 -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <h3 class="font-heading text-2xl font-bold text-cyan-400">Tác động của Độ mở thương mại và Lạm phát lên Tăng trưởng kinh tế</h3>
+                        <div class="flex gap-3 text-sm">
+                            <span class="bg-white/10 px-3 py-1 rounded-full"><i class="far fa-calendar-alt mr-1"></i> 2026</span>
+                            <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full border border-cyan-500/30">Trưởng nhóm</span>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-300">
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-crosshairs text-cyan-500"></i> Bối cảnh & Mục tiêu</h4>
+                            <p>Đánh giá mối quan hệ đa chiều giữa độ mở thương mại, tỷ lệ lạm phát và sự tăng trưởng kinh tế của các quốc gia trong giai đoạn 2010–2023.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-cogs text-cyan-500"></i> Thực thi (Action)</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Thu thập, làm sạch dữ liệu vĩ mô (World Bank, UN Comtrade) bằng Excel & Stata.</li>
+                                <li>Xây dựng mô hình Panel Data, kiểm định kinh tế lượng (FEM/REM, Hausman test).</li>
+                                <li>Quản lý tiến độ và phân công nhiệm vụ nhóm.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-chart-line text-cyan-500"></i> Kết quả (Result)</h4>
+                            <p>Đưa ra báo cáo định lượng hoàn chỉnh, chỉ ra ngưỡng lạm phát tối ưu và tác động của độ mở thương mại đối với sự tăng trưởng từng nhóm quốc gia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <h3 class="font-heading text-2xl font-bold text-cyan-400">Mối quan hệ CMCN 4.0 và Mức độ tinh vi của sản phẩm xuất khẩu</h3>
+                        <div class="flex gap-3 text-sm">
+                            <span class="bg-white/10 px-3 py-1 rounded-full"><i class="far fa-calendar-alt mr-1"></i> 2026</span>
+                            <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full border border-cyan-500/30">Trưởng nhóm</span>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6 text-sm text-gray-300">
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-crosshairs text-cyan-500"></i> Bối cảnh & Mục tiêu</h4>
+                            <p>Đo lường tác động của việc ứng dụng công nghệ 4.0 đến năng lực cạnh tranh và chỉ số tinh vi (complexity) của hàng hóa xuất khẩu.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-cogs text-cyan-500"></i> Thực thi (Action)</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Sử dụng Python và Stata xử lý cấu trúc dữ liệu xuất nhập khẩu phức tạp.</li>
+                                <li>Xây dựng mô hình định lượng đánh giá năng lực xuất khẩu.</li>
+                                <li>Điều phối công việc, tổng hợp kết quả phân tích.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-chart-line text-cyan-500"></i> Kết quả (Result)</h4>
+                            <p>Đề xuất hàm ý chính sách về chuyển dịch cơ cấu xuất khẩu, nâng cao năng lực cạnh tranh quốc gia trong kỷ nguyên số.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                        <h3 class="font-heading text-2xl font-bold text-cyan-400">Nghiên cứu Đường cong Kuznets Môi trường (EKC)</h3>
+                        <div class="flex gap-3 text-sm">
+                            <span class="bg-white/10 px-3 py-1 rounded-full"><i class="far fa-calendar-alt mr-1"></i> 2026</span>
+                            <span class="bg-gray-500/20 text-gray-300 px-3 py-1 rounded-full border border-gray-500/30">Thành viên nghiên cứu</span>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-300">
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-cogs text-cyan-500"></i> Thực thi (Action)</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Thu thập và xử lý chuỗi dữ liệu kinh tế - môi trường bằng Excel & Stata.</li>
+                                <li>Hỗ trợ xây dựng mô hình kiểm định mối quan hệ phi tuyến tính giữa thu nhập bình quân đầu người và ô nhiễm môi trường.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-heading text-4xl font-bold text-navy-900 mb-4">Kinh Nghiệm & Hoạt Động</h2>
+                <div class="w-20 h-1 bg-cyan-500 mx-auto"></div>
+            </div>
+
+            <div class="relative border-l-4 border-gray-200 ml-4 md:ml-0 md:pl-8 space-y-12">
+                
+                <!-- Exp 1 -->
+                <div class="relative pl-8 md:pl-0" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <span class="text-sm font-bold text-cyan-600 mb-2 block">2025 - 2026 (Part-time)</span>
+                        <h3 class="font-heading text-xl font-bold text-navy-900">Education Sales Intern</h3>
+                        <p class="text-gray-500 mb-4">Công ty Cổ phần Edutalk</p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-2">
+                            <li><strong class="text-gray-800">Khai thác dữ liệu:</strong> Tìm kiếm, tiếp cận khách hàng tiềm năng qua MXH.</li>
+                            <li><strong class="text-gray-800">Tư vấn:</strong> Lộ trình học tập, chương trình ưu đãi.</li>
+                            <li><strong class="text-gray-800">Quản lý CRM:</strong> Phân tích tỷ lệ chuyển đổi (Conversion Rate) trên CRM/Excel để tối ưu quy trình.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="relative pl-8 md:pl-0" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <span class="text-sm font-bold text-cyan-600 mb-2 block">2025 - Nay</span>
+                        <h3 class="font-heading text-xl font-bold text-navy-900">Gia sư Tiếng Anh độc lập</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-2 mt-4">
+                            <li>Thiết kế lộ trình học tập cá nhân hóa cho học sinh trung học (công lập & quốc tế).</li>
+                            <li>Ôn thi chuyển cấp vào lớp 10 đạt điểm cao.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Exp 3 -->
+                <div class="relative pl-8 md:pl-0" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <span class="text-sm font-bold text-cyan-600 mb-2 block">2025 - Nay</span>
+                        <h3 class="font-heading text-xl font-bold text-navy-900">Hoạt động ngoại khóa & Sự kiện</h3>
+                        <p class="text-gray-500 mb-4">Đại học Ngoại Thương</p>
+                        <div class="space-y-4">
+                            <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                                <img src="event-thailand-1.jpg" alt="Đón tiếp Thủ tướng Thái Lan" class="w-32 h-24 object-cover rounded-lg border border-gray-200 shadow-sm">
+                                <div>
+                                    <p class="font-semibold text-navy-900">Tháng 4/2025</p>
+                                    <p class="text-gray-600 text-sm">Tham gia đoàn sinh viên đón tiếp Thủ tướng Thái Lan.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                                <img src="event-ftu65.jpg" alt="Kỷ niệm 65 năm FTU" class="w-32 h-24 object-cover rounded-lg border border-gray-200 shadow-sm">
+                                <div>
+                                    <p class="font-semibold text-navy-900">Tháng 11/2025</p>
+                                    <p class="text-gray-600 text-sm">Thành viên Đội lễ tân của trường trong đại lễ kỷ niệm 65 năm thành lập.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-navy-900 text-center py-12 border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-heading text-2xl font-bold text-white mb-6">Kết nối với tôi</h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="mailto:ngocvuthp2006@gmail.com" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-cyan-500 hover:text-navy-900 transition-all">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-cyan-500 hover:text-navy-900 transition-all">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-cyan-500 hover:text-navy-900 transition-all">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 Vu Kim Ngoc. Designed with <i class="fas fa-heart text-cyan-500 mx-1"></i> cho vị trí Data Analyst.
+            </p>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Khởi tạo animation
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+        });
+
+        // Xử lý sticky header background khi cuộn
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
